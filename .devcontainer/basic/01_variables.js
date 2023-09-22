@@ -14,3 +14,6 @@ let name;  // undefined
 console.table([password,email,accountId,accountCity,name]);
 
 //pls prefer use let not var bcz the problem are block and function scope
+
+//path for run js program pls change evry time file name
+//node .devcontainer/basic/04_operation.js
