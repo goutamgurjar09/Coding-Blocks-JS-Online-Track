@@ -17,3 +17,6 @@ console.table([password,email,accountId,accountCity,name]);
 
 //path for run js program pls change evry time file name
 //node .devcontainer/basic/04_operation.js
+
+let num = 20;
+console.log(num);
