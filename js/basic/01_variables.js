@@ -18,7 +18,7 @@
 //path for run js program pls change evry time file name
 //node .devcontainer/basic/04_operation.js
 
-let num = 20;
+//let num = 20;
 //console.log(num);
 //-------strings------
 //Way-1
@@ -66,4 +66,20 @@ let num = 20;
 //let barish = 'hogi + '\n' + Not'//wrong
 //let barish = 'hogi , \n , Not'//hogi , 
                              //, Not
-console.log(barish)
+//console.log(barish)
+
+let firstname = 'punit '
+let lastname = 'gurjar '
+let state = 'mp'
+let favLang = 'english'
+ 
+//let greetings = "kaise ho bhai " + firstname + lastname + " and where are you from "+state+" and what is your fav lenguage "+favLang
+//let greetings2 = `kaise ho bhai  ${firstname}  ${lastname} and where are you from ${state} and what is your fav lenguage ${favLang}`
+//console.log(greetings2);
+// console.log(firstname)
+// console.log(lastname)
+// console.log(state)
+// console.log(favLang)
+
+
+//boolean
