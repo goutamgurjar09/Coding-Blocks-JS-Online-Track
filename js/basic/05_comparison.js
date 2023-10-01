@@ -56,3 +56,4 @@ ans = n3/n5//-> true  / false -> 1 / 0 - > infinite
 ans = n5/n3//-> false  / true -> 0 / 1 - > 0
 ans = n5/n4// false -> 0 / 0 - > NAN -> not a number
 console.log(ans);
+console.log(typeof(ans));//number
