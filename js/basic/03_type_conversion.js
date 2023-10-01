@@ -1,3 +1,5 @@
+//boolean
+
 //let score = 10;
 // console.log(typeof score);
 // score = "10";
@@ -18,7 +20,7 @@
 //  true => 1; false => 0
 
 
-let isLogin = 1 //true
+//let isLogin = 1 //true
 //isLogin = 0
 //isLogin = "" //false
 //isLogin = "ranvey" //true
@@ -29,10 +31,19 @@ let isLogin = 1 //true
 // "" => false
 // "hitesh" => true
 
-let somenum = 33
-let strnum = String(somenum)
-console.log(strnum);  //33
-console.log(typeof strnum); //string
+// let somenum = 33
+// let strnum = String(somenum)
+// console.log(strnum);  //33
+// console.log(typeof strnum); //string
+
+// let hello = true//true
+// hello = 1//1
+// console.log(hello);
 
 
+let other = false//false
+other = 0//0
+console.log(other);
+
+// ---------------------//
 

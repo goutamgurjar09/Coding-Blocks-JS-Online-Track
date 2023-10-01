@@ -82,4 +82,3 @@ let favLang = 'english'
 // console.log(favLang)
 
 
-//boolean
