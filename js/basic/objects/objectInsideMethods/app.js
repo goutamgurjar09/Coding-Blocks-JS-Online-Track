@@ -90,3 +90,39 @@ let person = {
 //   city: 'new delhi',
 //   describe: [Function: describe]
 // }
+
+
+// let marks = {
+//     dsa: 55,
+//     web: 85,
+//     ml: 90,
+//     totalMarks: function(){
+//         return 55 + 85 + 90;
+//     }
+// }
+ //console.log(marks);
+ //console.log(marks.totalMarks());
+
+
+// let marks = {
+//     dsa: 55,
+//     web: 85,
+//     ml: 90,
+//     totalMarks: function(){
+//         return this.dsa + this.web + this.ml;
+//     }
+// }
+//  console.log(marks);
+//  console.log(marks.totalMarks());//230
+
+
+let marks = {
+    dsa: 55,
+    web: 85,
+    ml: 90,
+    totalMarks: function(fine){
+        return this.dsa + this.web + this.ml - fine;
+    }
+}
+ console.log(marks);
+ console.log(marks.totalMarks(50));//180
