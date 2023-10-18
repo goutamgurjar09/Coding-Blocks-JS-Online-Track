@@ -70,7 +70,7 @@ console.log(ans2);//20
 //-------------|----------|-------------|---------------------
 //line-22 se// | val1->un.|  num1->10   |->line 18 se
             // | val2->un.|  num2->2    |
-            // | total->un|  total->12  |->  //ab is toatl ko main GEC ko return kr dete parent ko hai means is fun ke hr baar
+            // | total->un|  total->12  |->  //ab is toatl ko main GEC ko return kr dete hai (means iske parent ko) means is fun ke hr baar
             // |          |             |    //iske baad hmara EP delete ho jata hai bcz iska kaam ho gya
             // |          |             |    //now ans1 will be -> 12
             // |          |             |    //and line no- 24 pr ans2 ke liye ek baar again function call hota hai then again
