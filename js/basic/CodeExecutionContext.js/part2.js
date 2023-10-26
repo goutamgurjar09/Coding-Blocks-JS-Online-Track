@@ -168,3 +168,14 @@ console.log(showMsgRes)
 //and jaise hi CEP ne return greet kiya vese hi->  "hello kavya good bye" from MCP se direct  
 //showMsgRes =   "hello kavya good bye"   aa jayegi uske baad  showMsg() function ka EC delete ho jayega bcz iska kaam khtm ho  gya
 // or value print ho jayegi 
+
+
+//----------------------------
+var username = "hy goutam";
+      var person ={
+        email : "sam@gmail.com",
+        password: "samarth"
+      }
+console.log(username);//hy goutam
+
+
