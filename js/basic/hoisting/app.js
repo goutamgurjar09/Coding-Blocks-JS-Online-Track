@@ -141,6 +141,14 @@
 //------------------------
 //TypeError: Assignment to constant variable.
 
-const a = 1000; //-> error -> dead temporal zone || temporal dead zone
-a = 1000;
-console.log(a); //1000
+// const a = 1000; //-> error -> dead temporal zone || temporal dead zone
+// a = 1000;
+// console.log(a); //1000
+
+
+// let inp = document.querySelector('input');
+// let head = document.querySelector('h1')
+// inp.addEventListener('input', (event)=>{
+//     head.innerText = event.target.value;
+// })
+
