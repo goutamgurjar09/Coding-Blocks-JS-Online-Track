@@ -59,7 +59,7 @@ button{
     background-color: rgb(255,158,0);
 }
 .zero{
-    width: 88%;
-    grid-column: span 2;
+    /* width: 88%; */
+    /* grid-column: span 2; */
     border-radius: 80px ;
 }
