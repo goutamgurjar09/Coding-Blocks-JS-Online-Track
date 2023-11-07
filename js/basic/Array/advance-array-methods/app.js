@@ -67,6 +67,8 @@
 // 3. filter -> method()
 // let numStr = [10 ,'g', 30 , 'a' , 50]
 
+
+
 // let filterArr = numStr.filter( function(item){
 //     if(typeof(item) === 'number'){
 //         return item;
