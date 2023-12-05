@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        .one{
+            width: 100px;
+            height: 100px;
+            background-color: blueviolet;
+        }
+        .light{
+            background-color: white;
+            color: rgb(255, 1, 1);
+        }
+        .dark{
+            background-color: rgb(2, 2, 2);
+            color: rgb(249, 247, 247);
+        }
+
+    </style>
+</head>
+<body>
+    <!-- this is bad way -->
+    <!-- <button onclick="console.log('click me'); alert('hello')">click me</button>
+    
+    <button ondblclick="console.log('click me dbl times 2X')">btn was clicked 2 times</button>
+
+
+    <div class="one" onmouseover="console.log('mouse over on me')" >
+     this is a div1
+    </div> -->
+
+
+    <!--using event handler  this is good way -->
+
+   <!-- <button id="btn1" onclick="console.log('this is an inline event but this is not run bcz first priority js code ko milegi bhi run hoga jb aap only event handler ka use kroge')">btn1</button> -->
+   <!-- <div class="one">
+        this is a div1
+    </div> -->
+
+    <!-- using adeventListener -->
+    <!-- <button id="btn1" onclick="console.log('this is an inline event using eventlistener ye code bhi run hoga and js ka bhi')" >btn1</button> -->
+     
+    <button id="btn1" >click me</button>
+
+
+
+    <!-- task-1 -->
+
+    <!-- <button id="mode">try</button> -->
+
+    <button class="mode">try</button>
+
+    <p>welcome goutam gurjar</p>
+
+    <script src="app.js"></script>
+</body>
+</html>
