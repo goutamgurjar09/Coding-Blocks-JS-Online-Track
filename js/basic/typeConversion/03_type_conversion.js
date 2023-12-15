@@ -1,6 +1,6 @@
 //boolean
 
-//let score = 10;
+// let score = 10;
 // console.log(typeof score);
 // score = "10";
 // score = "10abc";
@@ -16,7 +16,7 @@
 // console.log(num)
 
 // "10" => 10
-// "10abc" => NaN
+// "10abc" =>10abc string
 //  true => 1; false => 0
 
 

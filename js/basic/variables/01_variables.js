@@ -15,7 +15,7 @@
 
 //pls prefer use let not var bcz the problem are block and function scope
 
-//path for run js program pls change evry time file name
+//path for run js program pls change evry time file name when you create new file
 //node .devcontainer/basic/04_operation.js
 
 //let num = 20;
@@ -41,8 +41,8 @@
 
 // ------------------------
 // string concatination (concat) -> +
-//console.log(fName + lastName)
-//console.log(fName + space + lastName)
+// console.log(fName + lastName)
+// console.log(fName + space + lastName)
 // console.log(fName + ' ' + lastName)
 // console.log(fName + " " + lastName)
 // console.log(fName + ` ` + lastName)
@@ -73,7 +73,7 @@ let lastname = 'gurjar '
 let state = 'mp'
 let favLang = 'english'
  
-//let greetings = "kaise ho bhai " + firstname + lastname + " and where are you from "+state+" and what is your fav lenguage "+favLang
+//let greetings = "kaise ho bhai " + firstname + lastname + " and where are you from " + state + " and what is your fav lenguage " + favLang
 //let greetings2 = `kaise ho bhai  ${firstname}  ${lastname} and where are you from ${state} and what is your fav lenguage ${favLang}`
 //console.log(greetings2);
 // console.log(firstname)

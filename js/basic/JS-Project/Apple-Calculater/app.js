@@ -20,8 +20,6 @@ btn.forEach(function (button) {
     else if(button.textContent === 'AC'){
       input.value = '';
       result = ''; 
-      
-
     }
     else {
       // Append the value of the button to the input field

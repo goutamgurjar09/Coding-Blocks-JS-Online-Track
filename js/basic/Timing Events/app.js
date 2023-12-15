@@ -1,5 +1,5 @@
 // its a time based events
-//the window object allows us to execution of code at a specific time intervels this time intervelsare called timing events
+//the window object allows us to execution of code at a specific time intervels this time intervels are called timing events
 //the two key methods to use with js are-> setTimeout(),setInterval() and clearIntervel()
 
 //1. setTimeout() :its a browser webApi   that sets a timer which executes a function or piece of code once the timer expires
@@ -52,7 +52,7 @@ let startbtn = document.querySelector('#btn')
 // let stopbtn = document.querySelector('#btnTwo')
 
 // let num = 0;
-// let timeRefrence;
+// let timeRefrence;//id
 // btn.addEventListener('click',()=>{
 //     p.innerHTML =`Loading data........`  
 //     timeRefrence = setInterval(() => {
@@ -70,11 +70,11 @@ let startbtn = document.querySelector('#btn')
 
 
 //-------------------
-// timeRef is a variable used to store the reference to the interval timer returned by setInterval. This reference is later used with clearInterval to stop the interval when needed.
+// timeRef is a variable/id used to store the reference to the interval timer returned by setInterval. This reference is later used with clearInterval to stop the interval when needed.
 
 // In your code:
 
-// let timeRef;
+// let timeRef/id;
 // This line declares a variable named timeRef. The purpose of this variable is to hold the reference to the interval timer so that you can clear the interval later using clearInterval.
 
 
@@ -130,12 +130,15 @@ let startbtn = document.querySelector('#btn')
 //-------------------
 let Id = setInterval(function(){ //imp
     console.log("hi i am swaggy")
-} , 1000)
+} , 3000)
 
 
 setTimeout(function(){
     clearInterval(Id); //imp 
-} , 4000)
+} , 30000)
+//30000ms = 30s means ye fun every 3s me call hoga and 30s tk chlega then stop hoga means totaol 10 times->hi i am swaggy print hoga
+
+
 
 //it will execute the code 4 times every 1 sec.
 

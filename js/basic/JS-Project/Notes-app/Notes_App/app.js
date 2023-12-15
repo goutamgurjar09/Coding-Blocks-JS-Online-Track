@@ -10,7 +10,7 @@ btn.addEventListener('click',(e)=>{
     inp.value = "";  //input text remove/khali ho jaay after append to li
 
     //li pr click krne pr remove ho jaay and isko addevent. ke bahar nhi likh skte bcz iska scope yhi hai
-    li.addEventListener('click',function(e){
+    li.addEventListener('click',function(){
         li.remove()
         //e.target.remove();
     })

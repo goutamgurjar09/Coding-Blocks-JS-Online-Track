@@ -1,0 +1,121 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    height: 100vh;
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin: 0; /* Adjusted to remove extra margin */
+    color: rgb(1, 1, 1);
+}
+
+.main-container {
+    border-radius: 2%;
+    width: 75%; /* Adjust the width based on your preference */
+    max-width: 400px; /* Set a maximum width for larger screens */
+    background-color: rgb(236, 238, 244);
+    margin: 5px auto; /* Center the container vertically and horizontally */
+    padding: 10px;
+    
+}
+
+.header {
+    text-align: center;
+    text-transform: uppercase;
+    font-size: 20px;
+    /* background-color: blueviolet; */
+}
+
+.form {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    
+}
+
+.form-input {
+    margin-bottom: 13px;
+    position: relative;  
+    
+}
+.form-input i{
+    position: absolute;
+    right: 10px;
+    top: 38px;
+    visibility: hidden;
+}
+.form-input.success i.fa-check-circle {
+  color:  rgb(6, 168, 6);
+  visibility: visible;
+}
+.form-input.error i.fa-exclamation-circle{
+    color:  rgb(249, 6, 6);
+    visibility: visible;
+}
+.form-input small{
+   color: rgb(249, 6, 6);
+   position: absolute;
+   /* top: 0; */
+   visibility: hidden;
+}
+.form-input.error small{
+    visibility: visible;
+}
+.form-input input:focus{
+    outline: 0;
+    border-color:#777;
+}
+.form-input.success input{
+    border-color: rgb(6, 168, 6);
+}
+.form-input.error input{
+    border-color: rgb(249, 6, 6);
+}
+
+.form-input label {
+    display: inline-block;
+    margin-bottom: 10px;
+}
+
+.btn {
+    margin-top: 10px;
+    background-color: blue;
+    color: aliceblue;
+    width: 20%;
+   
+    
+}
+.container{
+    max-width: 700px;
+    background-color: rgb(236, 238, 244);
+    margin-top: 10px;
+}
+
+
+.edit,.delete,.save{
+    font-size: 20px;
+    border: 0;
+    background-color: transparent;
+}
+.edit{
+    color: rgb(144, 92, 23) ;
+    
+}
+.delete{
+    color: red;
+    }
+.save{
+    color: rgb(5,151,5)
+}
+/* Responsive adjustments */
+@media screen and (max-width: 600px) {
+    .main-container {
+        width: 90%; /* Adjust the width for smaller screens */
+    }
+}

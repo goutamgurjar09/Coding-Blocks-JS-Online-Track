@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--single selecter using js -->
+    <select id="select">
+        <option value="1">Angular</option>
+        <option value="2">React</option>
+        <option value="3">Vue.js</option>
+        <option value="4">Ember.js</option>
+
+    </select>
+    <div id="getVal"></div>
+
+    <script>
+        
+       // Get the select element
+        let selectDiv = document.querySelector('#getVal')
+
+        let selectElement = document.querySelector('#select')
+
+        // Show the default selected value on the console
+       // console.log('Selected Value:', selectElement.value);
+
+        // // Add an event listener to handle changes
+        selectElement.addEventListener('change',()=>{
+              // Get the selected option
+            const selectedOption = selectElement.selectedOptions[0];
+
+            // let selectedValue = selectElement.value
+            // let selectedContent = selectElement.textContent
+            let selectedValue = selectedOption.value
+            let selectedContent = selectedOption.textContent //its a DOM property which give  select element content-> selectedContent
+
+            // Show the selected value on the console
+            console.log('Selected Value:', selectedValue);
+            console.log('Selected Value:', selectedContent); //this give selected content
+
+            // let li  = document.createElement('li')
+            li.textContent = `${selectedValue}  ${selectedContent}`;
+            selectDiv.appendChild(li)
+            
+            //selectDiv.textContent = selectedValue;
+        }) 
+
+
+
+
+       
+    </script>
+</body>
+</html>
