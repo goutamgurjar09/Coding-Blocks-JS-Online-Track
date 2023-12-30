@@ -9,7 +9,7 @@ form.addEventListener('submit', (e) => {
 
 const formValidation = () => {
     const username = document.getElementById("inputUsername").value;
-    const email = document.getElementById("inputEmail").value;
+    const email = document.getElementById("inputEmail").value;s
     const phone = document.getElementById("inputNumber").value;
     const pass = document.getElementById("inputPassword").value;
     const Cpass = document.getElementById("inputCPassword").value;
@@ -60,7 +60,7 @@ const formValidation = () => {
         document.getElementById("Password").innerHTML = "** Please enter your Password";
         return false;
     }
-    if ((pass.length <= 5) || (username.length > 20)) {
+    if ((pass.length <= 5) || (pass.length > 20)) {
         document.getElementById("Password").innerHTML = "** Password should be between 5 to 20";
         return false;
     }

@@ -40,3 +40,11 @@ let arr2 = [ 10 ,true , "sam" , "mav" , undefined, null , 100]
 
 //  console.log(arr[2][0]);//1
 //  console.log(arr[2][2]);//4
+
+
+
+
+
+
+
+
