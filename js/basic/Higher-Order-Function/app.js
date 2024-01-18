@@ -1,42 +1,41 @@
 //Higher order function are function that takes other function as a argument or returns functions as their results
-//jise  callback function bolte hai
+//->jise  callback function bolte hai
 
 //ex-> suppose aapki ek company hai or apko candidate/employees higher krna hai to uske liye apko interview lena hai then we will use hof to understanding purpose
 
 
-// const interviewer = (name) =>{//arrow function
-//     if(name == "goutam"){
-//       return function(question){//this is anonumous function bina name bala
-//          console.log(`Hi ${name} plz explain what is ${question}`)
-//       }
-//     }
-//     if(name == "sahaj"){
-//         return function(question){
-//            console.log(`Hi ${name} plz explain what is ${question}`)
-//         }
-//     }
-//     if(name == "kannu"){
-//         return function(question){
-//            console.log(`Hi ${name} plz explain what is ${question}`)
-//         }
-//     }
-//     else{
-//         return function(){
-//             console.log(`Hi Welcome to interview`)
- 
-//         }
-//     }
-// }
+const interviewer = (name) =>{//arrow function
+    if(name == "goutam"){
+      return function(question){//this is anonumous function bina name bala
+         console.log(`Hi ${name} plz explain what is ${question}`)
+      }
+    }
+    if(name == "sahaj"){
+        return function(question){
+           console.log(`Hi ${name} plz explain what is ${question}`)
+        }
+    }
+    if(name == "kannu"){
+        return function(question){
+           console.log(`Hi ${name} plz explain what is ${question}`)
+        }
+    }
+    else{
+        return function(){
+            console.log(`Hi Welcome to interview`)
+        }
+    }
+}
 //first way to call the HOF function
 // interviewer("goutam")("HOF");
 // interviewer("sahaj")("Full stack developer");
 // interviewer("kannu")("js");
 
 //second way
-// const candi1 = interviewer("goutam")
-// candi1("HOF");
-// candi1("Full stack developer");
-// candi1("js");
+const candi1 = interviewer("goutam")
+candi1("HOF");
+candi1("Full stack developer");
+candi1("js");
 
 //--------------------------
 //normal function 

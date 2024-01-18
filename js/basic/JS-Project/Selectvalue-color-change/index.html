@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        
+        #box{
+            width: 150px;
+            height: 100px;
+            background-color:red;
+            display: none;
+        }
+
+    </style>
+</head>
+ <body>
+
+ <!--   
+Task-> 
+we have a div and dropdown  and 
+we want that when we select the value
+from dropdown then div background-color should be 
+changed accroding to selected value
+ -->
+
+ <div id="box" >this is red div</div>
+
+<select onchange="bgChange(this.value)">
+    <option value="red" selected>Red</option>
+    <option value="yellow">Yellow</option>
+    <option value="green">Green</option>
+    <option value="coral">Coral</option>
+    <option value="blue">Blue</option>
+</select>
+    
+    <script src="app.js"></script>
+</body>
+</html>

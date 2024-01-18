@@ -92,8 +92,7 @@
 //and ydi false return krta hai to filter function use ignore kr deta hai
 
 
-
-// let array = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10];
+// let array = [1, 2, 3, 4, 5, 6];
 
 
 // let newarr = array.filter( (curval,index,array)=>{
@@ -104,9 +103,79 @@
 // console.log(newarr)
 
 
-
 //------------------------
 //map() -> method
+
+//-> map() creates a new array from calling a function for every array element.
+
+//-> map() does not execute the function for empty elements.  //-> arr = [1, 2, , 4, 5]; 
+
+//-> map() does not change the original array.
+
+//-> Overall map() method is used to iterate over an array and call a function on every element of the array and returns a new array. 
+
+//this-> In JavaScript, the this keyword inside a map callback function refers to the global object ->window object
+
+
+//ex:-
+// Input array
+let arr = [2,3,4,5,6];
+
+let newarr = arr.map( (currval,index,arr)=>{
+   return currval * currval
+})
+console.log(newarr)
+console.log(arr)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 //map methods creates a new array with the result of calling a function for every array element. it except an callback  function and returns a new array
 
@@ -116,17 +185,18 @@
 
 //thisValue -> means ye khtm hone ke baad ->(currvalue,index,arr) aap ek khud ka object create kr skte ho and uski valu ko this ke through access kr skte ho
 
-//const oldarr = ['a','b','c','d']
+// const oldarr = ['a','b','c','d']
 
 // const newArr = oldarr.map( (currval , index , oldarr)=>{
 //     // return currval
 //     // return currval + 'goutam' //and we can change oldarr value in newarr  ->[ 'agoutam', 'bgoutam', 'cgoutam', 'dgoutam' ] but it does'nt effect on older array
-//     //return index+ ":" + currval
-//     console.log(oldarr)
+//     return index+ ":" + currval
+//     //console.log(oldarr)
+
 
 // })
 // console.log(newArr)
-// console.log(oldarr)
+//console.log(oldarr)
 // [ 'agoutam', 'bgoutam', 'cgoutam', 'dgoutam' ]
 // [ 'a', 'b', 'c', 'd' ]
 
@@ -149,35 +219,37 @@
 //     //return currval
 
 // },this)
-// console.log(newData)//[ 'My name is goutam', 'My name is lala', 'My name is kanu'
+// console.log(newData)//[ 'My name is goutam', 'My name is lala', 'My name is kanu']
 
 
 // [
 //     'My name is goutam. My highest degree is Bca ',
 //     'My name is lala. My highest degree is Bca ',
 //     'My name is kanu. My highest degree is Bca '
-//  ]
+// ]
 
 
 
 //--------------------------
 //how we can use this keyward  in map
-const studentdata = [
-    { id: 1, name: 'goutam', degree: 'Bca' },
-    { id: 2, name: 'lala', degree: 'Mca' },
-    { id: 3, name: 'kanu', degree: 'Bsc' }
-  ];
+// const studentdata = [
+//     { id: 1, name: 'goutam', degree: 'Bca' },
+//     { id: 2, name: 'lala', degree: 'Mca' },
+//     { id: 3, name: 'kanu', degree: 'Bsc' }
+//   ];
   
-  const newData = studentdata.map(function(currval) {  //
-    // You can use `this` to refer to an external context
-    return `My name is ${currval.name}. My highest degree is ${currval.degree}. External value: ${this.externalValue}`;
-  }, { externalValue: 'Some External Value' });
+//   const newData = studentdata.map(function(currval) {  //
+//     // You can use `this` to refer to an external context
+//     return `My name is ${currval.name}. My highest degree is ${currval.degree}. External value: ${this.externalValue}`;
+//   }, { externalValue: 'Some External Value' });
   
-  console.log(newData);
+//   console.log(newData);
   
 
-  //In JavaScript, the this keyword inside a map callback function refers to the global object (window in a browser environment). The map function allows you to pass an optional second argument, which will be used as the value of this within the callback function.
+ //In JavaScript, the this keyword inside a map callback function refers to the global object (window in a browser environment). The map function allows you to pass an optional second argument, which will be used as the value of this within the callback function.
 
 //  In this example, the second argument to map is an object ({ externalValue: 'Some External Value' }). This object becomes the value of this inside the map callback function. You can then access properties of this object using this.propertyName.
 
 //Please note that arrow functions do not have their own this context; instead, they inherit it from the enclosing scope. If you're using an arrow function, the second argument to map won't affect the value of this inside the arrow function if you will use then it will give undefined. In that case, you need to use a regular function as shown in the example above.
+
+

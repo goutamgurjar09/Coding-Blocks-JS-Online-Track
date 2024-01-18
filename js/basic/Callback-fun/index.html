@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Callback function</h1>
+<!-- Any /A function that is passed as an argument into another function is called callback function-->
+<!-- A callback is a function that is executed after another funtion has finished executing  -->
+<!-- callback are a way to make sure certain code doesn't execute untill other code already finished execution -->
+
+<!-- Callback are just the name of a convention for using js functions . there is not a special thing called a 'callback' in the js language, 
+    its just a convention  instead of immediately returning some result like most functions, functions that use callbacks 
+    take some time to produse a result -->
+     <!-- callback means ise hm apni marzi se call kr skte hai kbi bhi  -->
+<!-- The word asynchronous  means async just means taskes some time  ot happens in the future not right now.  Usually callbacks only used when doing I/O e.g. -> downloading things, reading files , talking to DB etc. -->
+
+
+// Callback functions in JavaScript are commonly used in asynchronous programming, event handling, and various other scenarios
+// where you want a function to be executed after another function has completed its execution or when a specific event occurs. 
+<script>
+
+    //------------------------
+    //ex-1. Normal fun
+        const funA = ()=>{
+        console.log("hy preet")
+        }
+
+        const funB = ()=>{
+            console.log("hy paji")
+        }
+       
+        funB()  
+        funA()
+
+   //------------------------
+    //ex:-2   
+        // const funA = ()=>{
+        //     setTimeout( ()=>{
+        //         console.log("hy preet")
+        //     },3000)
+        // }
+
+        // const funB = ()=>{
+        //     console.log("hy paji")
+        // }
+        // funA()
+        // funB()  
+     
+        //first print hy paji after 3sec->hy preet 
+
+    //------------------------
+    //ex:-3
+   //normel fun me phle hm dono function ko alg alg call kr rhe the ex-1. me but using callback yha setTimeout is a webApi but it accept a CB that's why ye as a CB ki trh work kr rha ->hm funB() ko funA() me as a callback pass kr rhe / call kr rhe
+   // so 3sec. baad dono statement print honge bcz hm funB() ko funA() me as a callback pass kr rhe / call kr rhe
+        // const funA = ()=>{
+        //     setTimeout( ()=>{ //->Pass CB fun as a argument then call it -> funB() 
+        //         console.log("hy preet")
+        //         funB()           
+        //     },3000)
+        // }
+
+        // const funB = ()=>{
+        //     console.log("hy goutam")
+        // }
+        // funA()
+         // means phle 3sec. baad -> hy preet along with ye print hoga-> hy paji 
+    
+    //-----------------------
+
+    //ex-4
+
+    // const funA = ()=>{
+    //         setTimeout( ()=>{
+    //             console.log("hy preet")
+    //             funB()
+    //         },3000)
+    //     }
+
+    //     const funB = ()=>{
+    //         setTimeout( ()=>{
+    //             console.log("hy paji")  //after 4sec.
+    //         },4000)
+    //     }
+    //     funA()
+
+
+    //-------------------------
+    //ex-6
+    // const funA = ()=>{
+    //         setTimeout( ()=>{
+    //             console.log("hy preet")
+    //             funB()
+    //         },3000)
+    //     }
+
+    //     const funB = ()=>{
+    //         setTimeout( ()=>{
+    //             console.log("hy paji")
+
+    //         },4000)
+    //         console.log("hy goutam")
+
+    //     }
+    //     funA()
+
+    //first hy preet  along with hy goutam  then after 4sec  print-> hy paji
+
+
+    //---------------------------
+    //ex-7   CB function 
+
+    // const Pone = (name,callback)=>{//as a arguments/reference/callback  pass kiya->  Ptwo() fun ko see 113 line
+    //       console.log(`hy ${name} what are you doing`)
+    //       callback()
+    // }
+    // const Ptwo = ()=>{
+    //     console.log("hy bro how are you")
+    // }
+    // Pone("sahaj" ,Ptwo)  //Pone() ke inside hmne Ptwo ko as an argument pass kiya and first Pone ke ander jo hai bo print hoga then Ptwo() call hoga or uske ander jo bhi hai bo print hoga 
+    
+
+
+    //-------------------
+    //Pwo run after 2sec
+    // const Pone = (name,callback)=>{
+    //     console.log(`hy ${name} what are you doing`)
+    //     setTimeout( ()=>{
+    //         callback()
+    //     },2000)
+    // }
+    // const Ptwo = ()=>{
+    //     console.log("hy bro how are you")
+    // }
+    // Pone("sahaj" ,Ptwo)
+
+
+   //-------------------------
+   //Callback Hell    -> Means isme sbi setTimeout/CB function ek dusre pr depand hote hai and isme ydi ek fun me thoda sa bhi change  ho gya glti se to sb gadbad ho jayegi and hme error milegi
+                     //  ise Problem se bachne ke liye hm Promises ka use krte hai
+
+   //ex-1.suppose i have an Api and  i have to find after 2sec student roll number  then after 2sec  find name and age of 2nd-> roll num   
+   //then find after 2sec gender  using callback Hell
+
+    const getRollNo = ()=>{
+      setTimeout(()=>{
+          console.log("Api getting roll no")
+          const Roll_no = [11,12,13,14,15]
+          console.log(Roll_no)
+         //-----------              ye sb ek-dusre ke uper depand hai
+        //   setTimeout(()=>{
+        //     const bioData = {
+        //         name : 'goutam',
+        //         age : 23,
+        //         cast: 'gurjar'
+        //     }
+        //     console.log(`My roll no is ${Roll_no[2]} my name is ${bioData.name} and i am  ${bioData.age}`)
+        //   },2000)
+
+         setTimeout((rollNo)=>{
+            const bioData = {
+                name : 'goutam',
+                age : 23,
+                cast: 'gurjar'
+            }
+            console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age}`)
+            //----------------
+            // setTimeout((Castname)=>{
+            //     console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age} and my cast is  ${Castname}`) //bioData.cast
+            // },2000,bioData.cast) 
+            setTimeout(()=>{
+                console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age} and my cast is  ${bioData.cast}`) 
+            },2000)
+
+
+          },2000,Roll_no[3])  //ye Roll_no[3]  ki value ko hmne setTimeout me as a parameter access kr lenge
+          
+
+      },2000)
+
+    }
+
+   getRollNo()
+    </script>
+</body>
+</html>

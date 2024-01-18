@@ -1,1 +1,1 @@
-console.log(newArray)
+console.log(newarr)

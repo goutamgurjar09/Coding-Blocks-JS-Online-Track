@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+       .container{
+
+             display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-direction: column;
+            height: 100vh;
+            margin: 0;
+            background-color: rgb(12, 12, 59);
+       }
+       button {
+            padding: 10px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: rgb(11, 114, 11);
+            color: ghostwhite;
+        }
+        h2{
+            color: ghostwhite;
+        }
+        input {
+            margin-bottom: 10px;
+            width: 300px;
+            font-size: 16px;
+            padding: 10px;
+        }
+    </style>
+    
+</head>
+<style>
+
+</style>
+<body>
+    <div class="container">
+        <h2>Generate a Random Password</h2>
+        <input type="text" id="password" readonly>
+        <button onclick="generatePassword()">Generate password</button>
+    </div>
+
+
+<script src="app.js"></script>
+</body>
+</html> 

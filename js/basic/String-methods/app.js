@@ -1,5 +1,5 @@
 let str = "goutam gurjar"
-//console.log(str);
+console.log(str);
 
 // 1. length (property) -> no need to call
 // let len = str.length;
@@ -69,4 +69,6 @@ let str = "goutam gurjar"
  //let ans = s.trim().length; //yes
  //let ans = s.trim().toUpperCase().length//yes 
 
- console.log(ans); 
+ //console.log(ans); 
+
+ 
