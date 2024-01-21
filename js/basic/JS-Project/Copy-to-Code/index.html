@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Copy Code Example</title>
+  <style>
+    textarea {
+      width: 100%;
+      height: 200px;
+    }
+  </style>
+</head>
+<body>
+
+  <textarea id="code">Your code goes here...</textarea>
+  <button onclick="copyCode()">Copy Code</button>
+
+
+  <div class="code-container">
+    <pre>
+      <code id="codeSnippet">
+        <h1>goutam gurjar</h1>
+      </code>
+    </pre>
+    <button id="regenerateButton">Regenerate Code</button>
+  </div>
+
+  <script>
+    function copyCode() {
+      // Get the textarea element
+      const codeTextarea = document.getElementById('code');
+
+      // Select the text in the textarea
+      codeTextarea.select();
+      
+      try {
+        // Copy the selected text to the clipboard
+        document.execCommand('copy');
+        console.log('Code copied to clipboard!');
+      } catch (err) {
+        console.error('Unable to copy code to clipboard.', err);
+      }
+    }
+
+//--------------------------------
+
+    function generateRandomCode() {
+      // Your logic to generate/regenerate the code goes here
+      const randomCode = `
+        // Generated code
+        const randomNumber = Math.random();
+        console.log('Random Number:', randomNumber);
+      `;
+    
+      // Use the generated code as needed
+      codeSnippet.innerText = randomCode;
+    }
+
+  </script>
+
+</body>
+</html>

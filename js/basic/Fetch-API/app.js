@@ -94,26 +94,26 @@ const apiEndPoint = "https://jsonplaceholder.typicode.com/posts"
 
 //------------------
 //get posts
-const getPost = async()=>{
-   try{
-        const response = await fetch(apiEndPoint) //await islye bcz fetch-> promise return krta hai
-        if(response.status != 200){
-            throw new Error (`Some Error occured , Status code: ${responce.status}`)
-        }
-        const allpost = await response.json()  //and bcz ye bhi ek promise return krta hai
-        return allpost;
-   }
-   catch (error){
-      console.log(error ,  "Some error occurred. Please fix it.")
-   }
+// const getPost = async()=>{
+//    try{
+//         const response = await fetch(apiEndPoint) //await islye bcz fetch-> promise return krta hai
+//         if(response.status != 200){
+//             throw new Error (`Some Error occured , Status code: ${responce.status}`)
+//         }
+//         const allpost = await response.json()  //and bcz ye bhi ek promise return krta hai
+//         return allpost;
+//    }
+//    catch (error){
+//       console.log(error ,  "Some error occurred. Please fix it.")
+//    }
 
-}
+// }
 
   
 
 //getPost return a promise so we can consume this/allpost and return it on getBtn pr click krke
-getBtn.addEventListener('click',async()=>{
-    const posts = await getPost() //bcz getpost fun ek promise return kr rha
+// getBtn.addEventListener('click',async()=>{
+//     const posts = await getPost() //bcz getpost fun ek promise return kr rha
    // console.log(posts) //posts is an arr of object
    
    // Create a dynamic table based on the fetched posts means ye sara data tbody me jayega
@@ -126,31 +126,31 @@ getBtn.addEventListener('click',async()=>{
     // }).join('\n')
     //--------------
     //direct return ES6
- if(posts){ 
-    const tableBody = posts.map(post=>`<tr> 
-             <th scope="row">${post.id}</th>  
-             <td>${post.title}</td>
-             <td>${post.body}</td>
-         </tr>`
-     ).join('')
+//  if(posts){ 
+//     const tableBody = posts.map(post=>`<tr> 
+//              <th scope="row">${post.id}</th>  
+//              <td>${post.title}</td>
+//              <td>${post.body}</td>
+//          </tr>`
+//      ).join('')
 
-    const table = `
-        <table class="table">
-            <thead>
-                <tr>
-                    <th scope="col">id</th>
-                    <th scope="col">Title</th>
-                    <th scope="col">Body</th>     
-                </tr>
-            </thead>
-            <tbody>
-                ${tableBody}
-            </tbody>
-        </table> `
+//     const table = `
+//         <table class="table">
+//             <thead>
+//                 <tr>
+//                     <th scope="col">id</th>
+//                     <th scope="col">Title</th>
+//                     <th scope="col">Body</th>     
+//                 </tr>
+//             </thead>
+//             <tbody>
+//                 ${tableBody}
+//             </tbody>
+//         </table> `
 
-     document.querySelector('#showtableData').innerHTML = table
- }
-})
+//      document.querySelector('#showtableData').innerHTML = table
+//  }
+//})
 
 //In this example, the map function is used to iterate over the array of posts and create a table row for each post. The join('') method is then used to join the array of table rows into a single string, which is inserted into the <tbody> of the table. Adjust the properties (e.g., post.id, post.title, post.body) based on the structure of your post objects. Also, make sure to replace 'tableContainer' with the actual ID of the container where you want to insert the table
 //The join('') method is used to concatenate the elements of an array into a single string. When you join with an empty string (''), it means there is no separator between the elements, and they are simply concatenated without any additional characters.
@@ -158,110 +158,110 @@ getBtn.addEventListener('click',async()=>{
 
 //-----------------------  
 
-//task-2 -> create new post inside the arr of obj
-const createPost = async (newPost)=>{
-   try{
-        const response = await fetch(apiEndPoint ,{  //fetch(apiEndPoint,option)-> option me hm method ko use krte hao
-            method:"POST",
-            body: JSON.stringify(newPost), //body jo ki object hai jise hmne  inside the createtBtn event->  newPost ke name se create kiya hai
-            headers: { "Content-type": "application/json; charset=UTF-8"},
-        }) 
-        if(response.status != 201){
-        throw new Error (`Some Went Wrong , Status code: ${response.status}`)
-        }
-        const post = await response.json()
-        return post;
-   }
-   catch(error){
-    console.log(error)
-   }
-}
+// //task-2 -> create new post inside the arr of obj
+// const createPost = async (newPost)=>{
+//    try{
+//         const response = await fetch(apiEndPoint ,{  //fetch(apiEndPoint,option)-> option me hm method ko use krte hao
+//             method:"POST",
+//             body: JSON.stringify(newPost), //body jo ki object hai jise hmne  inside the createtBtn event->  newPost ke name se create kiya hai
+//             headers: { "Content-type": "application/json; charset=UTF-8"},
+//         }) 
+//         if(response.status != 201){
+//         throw new Error (`Some Went Wrong , Status code: ${response.status}`)
+//         }
+//         const post = await response.json()
+//         return post;
+//    }
+//    catch(error){
+//     console.log(error)
+//    }
+// }
 
 
 
-createtBtn.addEventListener('click',async()=>{
-      const newPost = {
-         title: "new post title",
-         body: "hy goutam gurjar,how are you",
-         userId:1  
-      }
-      const createdPost = await createPost(newPost)
-      console.log(createdPost)
-})
-//id bydefault milti hai server se
-//{title: 'new post title', body: 'hy goutam gurjar,how are you', userId: 1, id: 101}
+// createtBtn.addEventListener('click',async()=>{
+//       const newPost = {
+//          title: "new post title",
+//          body: "hy goutam gurjar,how are you",
+//          userId:1  
+//       }
+//       const createdPost = await createPost(newPost)
+//       console.log(createdPost)
+// })
+// //id bydefault milti hai server se
+// //{title: 'new post title', body: 'hy goutam gurjar,how are you', userId: 1, id: 101}
 
-//Note: But we are using fake api to actual server data pr koi change/create post nhi hoga 
-//we are just trying to understand purpose
+// //Note: But we are using fake api to actual server data pr koi change/create post nhi hoga 
+// //we are just trying to understand purpose
 
-//----------------------
+// //----------------------
 
-//task-3 updated post 
-const updatePost = async (newPost,id)=>{
-    try{
-         const response = await fetch(`${apiEndPoint}/${id}` ,{  //->  /posts/1->  fetch(`${apiEndPoint}/${id}`-> Routes 
-             method:"PUT",
-             body: JSON.stringify(newPost), //body jo ki object hai jise hmne  inside the createtBtn event->  newPost ke name se create kiya hai
-             headers: { "Content-type": "application/json; charset=UTF-8"},
-         }) 
-         if(response.status != 200){
-         throw new Error (`Some Went Wrong , Status code: ${response.status}`)
-         }
-         const post = await response.json()
-         return post;
-    }
-    catch(error){
-     console.log(error)
-    }
- }
-// updated post i want to change id:2 ->post data
-updatetBtn.addEventListener('click',async()=>{
-    const newPost = {
-       id : 2,
-       title: "Updated post title",
-       body: "Updated post title",
-       userId:1  
-    }
-    const updatedPost = await updatePost(newPost,2)
-    console.log(updatedPost)
-})
-//update id:2 post -> {id: 2, title: 'Updated post title', body: 'Updated post title', userId: 1}
+// //task-3 updated post 
+// const updatePost = async (newPost,id)=>{
+//     try{
+//          const response = await fetch(`${apiEndPoint}/${id}` ,{  //->  /posts/1->  fetch(`${apiEndPoint}/${id}`-> Routes 
+//              method:"PUT",
+//              body: JSON.stringify(newPost), //body jo ki object hai jise hmne  inside the createtBtn event->  newPost ke name se create kiya hai
+//              headers: { "Content-type": "application/json; charset=UTF-8"},
+//          }) 
+//          if(response.status != 200){
+//          throw new Error (`Some Went Wrong , Status code: ${response.status}`)
+//          }
+//          const post = await response.json()
+//          return post;
+//     }
+//     catch(error){
+//      console.log(error)
+//     }
+//  }
+// // updated post i want to change id:2 ->post data
+// updatetBtn.addEventListener('click',async()=>{
+//     const newPost = {
+//        id : 2,
+//        title: "Updated post title",
+//        body: "Updated post title",
+//        userId:1  
+//     }
+//     const updatedPost = await updatePost(newPost,2)
+//     console.log(updatedPost)
+// })
+// //update id:2 post -> {id: 2, title: 'Updated post title', body: 'Updated post title', userId: 1}
 
-//Note: But we are using fake api to actual server data pr koi change nhi hoga 
-//we are just trying to understand purpose
+// //Note: But we are using fake api to actual server data pr koi change nhi hoga 
+// //we are just trying to understand purpose
 
 
-//-------------------
-//task-4 patch method  update 1 post data
+// //-------------------
+// //task-4 patch method  update 1 post data
 
-const patchPost = async (newPost,id)=>{
-    try{
-         const response = await fetch(`${apiEndPoint}/${id}` ,{  //->  /posts/1->  fetch(`${apiEndPoint}/${id}`-> Routes 
-             method:"PATCH",
-             body: JSON.stringify(newPost), //body jo ki object hai jise hmne  inside the createtBtn event->  newPost ke name se create kiya hai
-             headers: { "Content-type": "application/json; charset=UTF-8"},
-         }) 
-         if(response.status != 200){
-         throw new Error (`Some Went Wrong , Status code: ${response.status}`)
-         }
-         const post = await response.json()
-         return post;
-    }
-    catch(error){
-     console.log(error)
-    }
-}
+// const patchPost = async (newPost,id)=>{
+//     try{
+//          const response = await fetch(`${apiEndPoint}/${id}` ,{  //->  /posts/1->  fetch(`${apiEndPoint}/${id}`-> Routes 
+//              method:"PATCH",
+//              body: JSON.stringify(newPost), //body jo ki object hai jise hmne  inside the createtBtn event->  newPost ke name se create kiya hai
+//              headers: { "Content-type": "application/json; charset=UTF-8"},
+//          }) 
+//          if(response.status != 200){
+//          throw new Error (`Some Went Wrong , Status code: ${response.status}`)
+//          }
+//          const post = await response.json()
+//          return post;
+//     }
+//     catch(error){
+//      console.log(error)
+//     }
+// }
 
 //Patch post  -> i want to change only title then we can use patch ->  routes-> /posts/1
 
-patchBtn.addEventListener('click',async()=>{
-    const newPost = {
-       id : 2,           //means id:2-> post 2 me hm title change kr rhe
-       title: "Updated post title",   
-    }
-    const patchedPost = await patchPost(newPost,2)
-    console.log(patchedPost)
-})
+// patchBtn.addEventListener('click',async()=>{
+//     const newPost = {
+//        id : 2,           //means id:2-> post 2 me hm title change kr rhe
+//        title: "Updated post title",   
+//     }
+//     const patchedPost = await patchPost(newPost,2)
+//     console.log(patchedPost)
+// })
 
 //{userId: 1, id: 2, title: 'Updated post title', body: 'est rerum tempore vitae\nsequi sint nihil reprehend…aperiam non debitis possimus qui neque nisi nulla'}
 
@@ -270,26 +270,26 @@ patchBtn.addEventListener('click',async()=>{
 //task-4  Delete post
 
 
-const deletePost = async (id)=>{
-    try{
-         const response = await fetch(`${apiEndPoint}/${id}` ,{  //->  /posts/1->  fetch(`${apiEndPoint}/${id}`-> Routes 
-             method:"DELETE",
-         }) 
-         if(response.status != 200){
-         throw new Error (`Some Went Wrong , Status code: ${response.status}`)
-         }
-         const post = await response.json()
-         return post;
-    }
-    catch(error){
-     console.log(error)
-    }
-}
+// const deletePost = async (id)=>{
+//     try{
+//          const response = await fetch(`${apiEndPoint}/${id}` ,{  //->  /posts/1->  fetch(`${apiEndPoint}/${id}`-> Routes 
+//              method:"DELETE",
+//          }) 
+//          if(response.status != 200){
+//          throw new Error (`Some Went Wrong , Status code: ${response.status}`)
+//          }
+//          const post = await response.json()
+//          return post;
+//     }
+//     catch(error){
+//      console.log(error)
+//     }
+// }
 
-deleteBtn.addEventListener('click',async()=>{
-    const deletedPost = await deletePost(2) //id=2
-    console.log(deletedPost)
-})
+// deleteBtn.addEventListener('click',async()=>{
+//     const deletedPost = await deletePost(2) //id=2
+//     console.log(deletedPost)
+// })
 //return an empty obj {}
 
 //---------------------------
@@ -346,30 +346,44 @@ deleteBtn.addEventListener('click',async()=>{
 
 //fatch covid19 data of country = India 
 
-// fetch('https://disease.sh/v3/covid-19/countries')
-//   .then(function (response) {
-//     return response.json();
-//   })
-//   .then(function (countriesData) {
-//         // Find data for India
-//     // Assuming countriesData is an array
-//     //const indiaData = countriesData.find(country => country.country === 'India');
-//     const indiaData = countriesData.find(country => {
-//         if (country.country === 'India') {
-//             return country;
-//         }
-//     });
-    
-//     if (indiaData) {
-//         console.log('COVID-19 Data for India:', indiaData);
-//         console.log('Total Cases in India:', indiaData.cases);
-//         console.log('Total Deaths in India:', indiaData.deaths);
-//         // Add more fields as needed
-//     } 
-//     else {
-//         console.log('Data for India not found.');
-//     }
-//   })
-//   .catch(function (error) {
-//      console.log(error);
-//   });
+
+fetch('https://disease.sh/v3/covid-19/countries')
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (countriesData) {
+    //console.log(countriesData)
+
+    //Find data for India
+   // Assuming countriesData is an array of object means iske ander bhot sare object hai 
+   //const indiaData = countriesData.find(country => country.country === 'India');
+    // const indiaData = countriesData.filter(item => { //item means object/value of array
+    //     if (item.country === 'India') {
+    //         return item;
+    //     }
+    // });
+    // if (indiaData) {
+    //      console.log('COVID-19 Data for India:', indiaData);
+    //      console.log('Total Cases in India:', indiaData[0].cases); //bcz indiaData is an array of object  means filter method returns an array
+    //      console.log('Total Deaths in India:', indiaData[0].deaths);
+    // } 
+    const indiaData = countriesData.find(country => { //country means object/value of array
+      if (country.country === 'India') {
+          return country;
+      }
+    });
+    if (indiaData) {
+        console.log('COVID-19 Data for India:', indiaData);
+        console.log('Total Cases in India:', indiaData.cases);
+        console.log('Total Deaths in India:', indiaData.deaths);
+    } 
+    else {
+        console.log('Data for India not found.');
+    }
+  })
+  .catch(function (error) {
+     console.log(error);
+  });
+
+//----------------------
+

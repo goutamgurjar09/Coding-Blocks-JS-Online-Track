@@ -1,4 +1,4 @@
-"use strict"; //treat all js code as newly version
+//"use strict"; //treat all js code as newly version
 
 //types of datatype
 //  1. number => // a = 12
@@ -15,3 +15,4 @@ console.log(typeof age);
 console.log(typeof null); //object
 
 console.log(typeof undefined);//undefined
+
