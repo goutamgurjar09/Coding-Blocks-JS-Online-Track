@@ -1,5 +1,45 @@
-//Higher order function are function that takes other function as a argument or returns functions as their results
-//->jise  callback function bolte hai
+
+//HOF ->A function which takes another function as an argument or returns a function  is called a higher-order function.
+
+
+//CB ->A function that is passed inside another function as an argument or returns a function as its result is called a higher-order function.
+
+
+//1. why we use HOF and CB
+//ex-> Suppose we have to create a calculater operation to hme alg -alg fun bana pdega like add,subtract,division and so on but it will be lenthy process
+
+//ex;
+function add(n1,n2){ 
+    return n1+n2;
+   
+}
+function sub(n1,n2){
+    return n1-n2;
+
+}
+function multi(n1 ,n2){ 
+     return n1*n2;
+}
+
+// console.log(add(10,20));
+// console.log(sub(10,20));
+// console.log(multi(10,20));
+
+
+//--------------------------------------------
+//we will create a master fun HOF  and perform same action  isse apko alg -alg(like add,sub...) function ko call nhi krna pdega  simple aapko HOF ko call krna pdeaga
+
+function operation(n1,n2,cb){   //hof
+    return cb(n1,n2);
+}
+console.log(operation(10,20,add));
+console.log(operation(10,20,sub));
+console.log(operation(10,20,multi));
+
+
+
+
+
 
 //ex-> suppose aapki ek company hai or apko candidate/employees higher krna hai to uske liye apko interview lena hai then we will use hof to understanding purpose
 
@@ -68,7 +108,7 @@ candi1("js");
 //---------------------
 //this is the process
 
-// function a(fn){ //hof //iska name same bhi rkh skte hai bcz isko parameter me catch krege to (fn = b)
+// function a(fn){ //this whole fun is hof // and inside this fun (fn) is a callback function and iska name same bhi rkh skte hai bcz isko parameter me catch krege to (fn = b)
 //     console.log("mai hu a");
 //     fn();
 // }
@@ -78,10 +118,10 @@ candi1("js");
 // }); 
 
 //------------------------
-//when you pass the ntire function as an argument in some other function it is called higher order function
+//when you pass the entire function as an argument in some other function it is called higher order function
 
 // callback function -> 'b'
-// the function which is being sent as an argument to some other function and therein called as well then it is a CALLBACK function.
+// the function which is being sent as an argument to some other function and there in called as well then it is a CALLBACK function.
 
 //other way Higher order functions -> 'a'->when you return an entire function from some other function then the other function is your HOF
 

@@ -239,6 +239,23 @@
 // 100
 // 1000
 
+
+// var a = 100;
+
+// function outer(){
+//     const b = 10;
+//     inner();
+//     function inner(){
+//         var b = 1000;
+//         console.log(b);
+//     }
+// console.log(b);   
+    
+// }
+// console.log(a);
+// outer();
+
+
 //------------------------
 
 // var a = 100;
@@ -248,9 +265,9 @@
 //     const b = 10;
 //     inner();
 //     function inner(){
-//         console.log(b);
+//         console.log(b); //10
 //     }
-//     console.log(a);
+//     console.log(a); //100
 // }
 
 // outer();

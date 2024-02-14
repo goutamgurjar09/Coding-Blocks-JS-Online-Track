@@ -1,0 +1,12 @@
+.bg{
+    background-color: rgb(14, 60, 128);
+    border-radius: 3%;
+}
+
+.label{
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.one{
+    margin: -25px;
+}

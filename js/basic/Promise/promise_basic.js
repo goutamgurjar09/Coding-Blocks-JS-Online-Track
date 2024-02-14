@@ -77,7 +77,7 @@
 //       let data = "hello this side goutam"   
 //       let err = 'mai server hu nhi de rha data' 
       
-//       reject(err)    //promise complete bcz i called  reject() fun before resolve()  means jis fun ko phle call krege bhi server responce dega  ->mai server hu nhi de rha data
+//       reject(err)    //promise not complete bcz i called  reject() fun before resolve()  means jis fun ko phle call krege bhi server responce dega  ->mai server hu nhi de rha data
 //       resolve(data)  //wada tod dena
            
 //     },3000)
@@ -114,5 +114,4 @@ myPromise
 })
 .catch( function(CatchServerError){
     console.log(CatchServerError)
-
 })

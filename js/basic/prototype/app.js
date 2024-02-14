@@ -69,7 +69,7 @@
 //---------------------------
 
 //prototype inheritence
-//Note: we can use to prototype to add properties and methods  to a constructor function
+//Note: we can use prototype to add properties and methods  to a constructor function
 
 //and object inherits the properties and methods from a prototype
 

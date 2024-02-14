@@ -9,7 +9,7 @@ form.addEventListener('submit', (e) => {
 
 const formValidation = () => {
     const username = document.getElementById("inputUsername").value;
-    const email = document.getElementById("inputEmail").value;s
+    const email = document.getElementById("inputEmail").value;
     const phone = document.getElementById("inputNumber").value;
     const pass = document.getElementById("inputPassword").value;
     const Cpass = document.getElementById("inputCPassword").value;

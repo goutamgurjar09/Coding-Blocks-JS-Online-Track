@@ -63,7 +63,7 @@ let startbtn = document.querySelector('#btn')
 
 
 // stopbtn.addEventListener('click',()=>{
-//     clearInterval(timeRefrence) //stop the timer when click stopbtn  and  Clear the interval using the stored reference
+//     clearInterval(timeRefrence) //stop the timer when click stopbtn  and  Clear the interval using the stored reference id
 //     p.innerHTML += 'Interval stopped'
 // });
 

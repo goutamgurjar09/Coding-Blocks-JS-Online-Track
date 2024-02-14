@@ -7,18 +7,19 @@
 </head>
 <body>
     <h1>Callback function</h1>
-<!-- Any /A function that is passed as an argument into another function is called callback function-->
-<!-- A callback is a function that is executed after another funtion has finished executing  -->
+<!-- A function that is passed as an argument into another function is called callback function-->
+<!-- A callback is a function that is executed after another funtion has finished execution  -->
 <!-- callback are a way to make sure certain code doesn't execute untill other code already finished execution -->
 
 <!-- Callback are just the name of a convention for using js functions . there is not a special thing called a 'callback' in the js language, 
     its just a convention  instead of immediately returning some result like most functions, functions that use callbacks 
     take some time to produse a result -->
      <!-- callback means ise hm apni marzi se call kr skte hai kbi bhi  -->
-<!-- The word asynchronous  means async just means taskes some time  ot happens in the future not right now.  Usually callbacks only used when doing I/O e.g. -> downloading things, reading files , talking to DB etc. -->
+<!-- The word asynchronous  means async just means it takes some time  to execute and happens in the future not right now.  Usually callbacks only used when doing I/O e.g. -> downloading things, reading files , talking to DB etc. -->
 
 
-// Callback functions in JavaScript are commonly used in asynchronous programming, event handling, and various other scenarios
+//Where it will be use?
+// Callback functions in JavaScript are commonly used in asynchronous programming, event handling,map,filter and various other scenarios
 // where you want a function to be executed after another function has completed its execution or when a specific event occurs. 
 <script>
 
@@ -141,48 +142,99 @@
    //Callback Hell    -> Means isme sbi setTimeout/CB function ek dusre pr depand hote hai and isme ydi ek fun me thoda sa bhi change  ho gya glti se to sb gadbad ho jayegi and hme error milegi
                      //  ise Problem se bachne ke liye hm Promises ka use krte hai
 
-   //ex-1.suppose i have an Api and  i have to find after 2sec student roll number  then after 2sec  find name and age of 2nd-> roll num   
-   //then find after 2sec gender  using callback Hell
-
-    const getRollNo = ()=>{
-      setTimeout(()=>{
-          console.log("Api getting roll no")
-          const Roll_no = [11,12,13,14,15]
-          console.log(Roll_no)
-         //-----------              ye sb ek-dusre ke uper depand hai
-        //   setTimeout(()=>{
-        //     const bioData = {
-        //         name : 'goutam',
-        //         age : 23,
-        //         cast: 'gurjar'
-        //     }
-        //     console.log(`My roll no is ${Roll_no[2]} my name is ${bioData.name} and i am  ${bioData.age}`)
-        //   },2000)
-
-         setTimeout((rollNo)=>{
-            const bioData = {
-                name : 'goutam',
-                age : 23,
-                cast: 'gurjar'
-            }
-            console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age}`)
-            //----------------
-            // setTimeout((Castname)=>{
-            //     console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age} and my cast is  ${Castname}`) //bioData.cast
-            // },2000,bioData.cast) 
-            setTimeout(()=>{
-                console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age} and my cast is  ${bioData.cast}`) 
-            },2000)
+               // The code structure is known as "Callback Hell," indicating that all the setTimeout or callback functions are dependent on each other.
+              //  If there is a slight change or mistake in one function, it could lead to issues in the entire code flow, and errors may occur.
 
 
-          },2000,Roll_no[3])  //ye Roll_no[3]  ki value ko hmne setTimeout me as a parameter access kr lenge
+              // Callback Hell, also known as the "Pyramid of Doom," refers to a situation in asynchronous programming where multiple nested callbacks within callbacks create a visually confusing 
+              //and hard-to-maintain structure. 
+              //  To overcome this problem, Promises are used. Promises provide a more organized and structured way to handle asynchronous operations    
+            
+//-------------------------------
+//using setTimeout ->Callback Hell
+// setTimeout(function () {
+//     console.log('First operation');
+//     setTimeout(function () {
+//         console.log('Second operation');
+//         setTimeout(function () {
+//             console.log('Third operation');
+//             // ... more nested callbacks
+//         }, 1000);
+//     }, 1000);
+// }, 1000);
+
+
+
+//-----------------------------
+//Using promises
+//So we will create a printdata(time) fun with an argument and this will return a promise so ise consume krne ke liye we will use .then/catck
+function printdata(time){
+    return new Promise ((res,rej)=>{
+        setTimeout(()=>{
+            res(time);  //2000
+        },2000);
+    })
+}
+printdata(2000) //this time will go on fun as a value
+.then((time)=>{
+    console.log(`first operation in ${time}`);
+    return printdata(2000);              //then we return again fun since this is returnning a promise so we will use .then  
+})
+.then((time)=>{
+    console.log(`second operation in ${time}`);
+    return printdata(2000);  
+})
+.then((time)=>{
+    console.log(`third operation in ${time}`);
+     
+})
+.catch(function (error) {
+    console.error('An error occurred:', error);
+});
+
+//------------------------
+
+//ex-2.suppose i have an Api and  i have to find after 2sec student roll number  then after 2sec  find name and age of 2nd-> roll num   
+
+//     const getRollNo = ()=>{
+//       setTimeout(()=>{
+//           console.log("Api getting roll no")
+//           const Roll_no = [11,12,13,14,15]
+//           console.log(Roll_no)
+//          //-----------              ye sb ek-dusre ke uper depand hai
+//         //   setTimeout(()=>{
+//         //     const bioData = {
+//         //         name : 'goutam',
+//         //         age : 23,
+//         //         cast: 'gurjar'
+//         //     }
+//         //     console.log(`My roll no is ${Roll_no[2]} my name is ${bioData.name} and i am  ${bioData.age}`)
+//         //   },2000)
+
+//          setTimeout((rollNo)=>{
+//             const bioData = {
+//                 name : 'goutam',
+//                 age : 23,
+//                 cast: 'gurjar'
+//             }
+//             console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age}`)
+//             //----------------
+//             // setTimeout((Castname)=>{
+//             //     console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age} and my cast is  ${Castname}`) //bioData.cast
+//             // },2000,bioData.cast) 
+//             setTimeout(()=>{
+//                 console.log(`My roll no is ${rollNo} my name is ${bioData.name} and i am  ${bioData.age} and my cast is  ${bioData.cast}`) 
+//             },2000)
+
+
+//           },2000,Roll_no[3])  //ye Roll_no[3]  ki value ko hmne setTimeout me as a parameter access kr lenge
           
 
-      },2000)
+//       },2000)
 
-    }
+//     }
 
-   getRollNo()
+//    getRollNo()
     </script>
 </body>
 </html>

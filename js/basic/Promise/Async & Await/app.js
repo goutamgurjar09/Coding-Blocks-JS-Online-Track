@@ -1,6 +1,6 @@
 // Async/await
 // there is a special syntax to work with promises in more comforetable fashion,
-// called  async/await. it is surprisingly easy to understand and use.
+// called  async/await. it is surprisingly easy to understand and use.  
 
 //the word "async" before a function means one simple thing: a function always returns a promise
 
@@ -166,8 +166,8 @@ async function getData(){
     console.log(roll_noData)   //[ 1, 2, 3, 4, 5 ]
 
     const bioDatas = await getbioData() //->getbioData is a function to hme ise as a function call krna pdega
-    //console.log(bioDatas)
-    console.log(bioDatass) //the error -> ReferenceError: bioDatass is not defined
+    console.log(bioDatas)
+    //console.log(bioDatas) //the error -> ReferenceError: bioDatass is not defined
 
   }
   catch(error){

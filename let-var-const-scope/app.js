@@ -1,4 +1,4 @@
-//->Var has function scope 
+//->Var has globel/function scope 
 
 //Reinitialization of Var
 // var a = 10;
@@ -241,3 +241,26 @@
 // }
 
 // console.log(win); //india
+
+
+// let Sone = document.getElementById('dropdown1');
+// let Stwo = document.getElementById('dropdown2');
+
+
+
+// Sone.addEventListener('change', function() {
+//     // Store the current value of Stwo
+//     let temp = Stwo.value;
+
+//     // Set the value of Stwo to the value of Sone
+//     Stwo.value = this.value;
+
+//     // Set the value of Sone to the stored value of Stwo
+//     this.value = temp;
+
+//     // Log the values to the console
+//     console.log("Sone:", Sone.value);
+//     console.log("Stwo:", Stwo.value);
+// });
+
+

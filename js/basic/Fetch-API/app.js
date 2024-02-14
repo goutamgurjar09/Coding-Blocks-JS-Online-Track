@@ -306,27 +306,6 @@ const apiEndPoint = "https://jsonplaceholder.typicode.com/posts"
 // DELETE	/posts/1
 
 
-
-//hy everyone this is goutam gurjar and today i am going to start 100 days of coding challenges 
-//and first day i have solved 4 problems
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 //----------------------
 //fetch the covid19 data based on api
 //its a covid19 api ->take from gfg

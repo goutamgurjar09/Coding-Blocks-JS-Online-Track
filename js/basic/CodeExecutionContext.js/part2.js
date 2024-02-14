@@ -1,10 +1,15 @@
 //Execution Context:-
 
+//The environment in which our js code is executed and eveluated  bcz js code need an environment to execute the code
+//by default js engine/browser creates the globel execution context before it starts to execute any code
 //Ec it's a environment jha pr js ka code run hota hai
 //when a js engine (means crome browser engine(v8)) executes a script/code , it creates a execution context.
 //and each execution context has two phases:
 //1.  creation phase(MCP/memory allocation) and 2. code execution phase
 
+//Note:- jb bhi aap js code likhte ho bo by default GEC me store ho chuka hota hai
+
+//Execution stack:- Execution stack , also known as calling stack  ->ita a stack with a LIFo(Last in First Out) which is used to store all the execution context created during the code execution
 //ex:-1.
 
 var a = 10;
@@ -170,12 +175,35 @@ console.log(showMsgRes)
 // or value print ho jayegi 
 
 
-//----------------------------
-var username = "hy goutam";
-      var person ={
-        email : "sam@gmail.com",
-        password: "samarth"
-      }
-console.log(username);//hy goutam
 
 
+//------------------------------------
+//  this  = "window";
+
+function fun1(){
+   var num = 10;
+   console.log(num);
+   fun2();
+   console.log("i will print after  fun3");
+}
+function fun2(){
+  console.log("hy paji");
+  fun3();
+}
+
+function fun3(){
+  console.log("hello bro");
+}
+fun1();
+
+
+//Note:Whenever a js code is executed the GEC (anonymous name se)will be created and inside GEC all variabeles and function is present/store-> means  fun1,fun2,fun3  first time in sbka reference GEC me store hoga
+
+
+//first time GEC create hoga and sare variables and functions will be store/ref. in GEC
+//line 205 se jb fun1() call hoga to pointer hmara fun1 pr upr chla jayega  and function calling pr  Ek or new Execution context bnega  
+//second time console me value milegi hme 
+//then fun2() call hoga now iska ek alg EC bnega then consoleme value milegi
+//then fun3() call hoga now iska ek alg EC bnega then consoleme value milegi
+//Ab yha se phle bale callstack ko remove kr denge fun3() bale bcz uska kaam ho gya and yha se bo fun2() (line-197) pr return back jayega and bha dekhega ydi sb kaam ho gya to uska bhi callstack remove ho jayega and fun1() pr return back ho jayega and bha dekhega (line-195) pr value print krega   and iske callstack bhi remove ho jayega ab
+//and reutrn hamara pointer GEC pr aa jayega jha se isko call kiya gya tha 
