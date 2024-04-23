@@ -7,10 +7,12 @@
 </head>
 <body>
     <input type="text" id="input">
-    <button id="btn">Generate QR</button>
-    <div id="Qrcode"></div>
-
-    <script src="app.js"></script>
+    <button id="remove">ClearAll</button>
+    
+    <script>
+        document.getElementById('remove').addEventListener('click',function(){
+            document.getElementById('input').value = '';
+        })
+    </script>
 </body>
 </html>
-

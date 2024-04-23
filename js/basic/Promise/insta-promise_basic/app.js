@@ -1,4 +1,4 @@
-// WRONG OR RIGHT (YOU DECIDE)
+// WRONG Way
 
 
 // function step1(){
@@ -8,7 +8,8 @@
 //     } , 4000) //milli seconds => 4s
 // }
 // let image = step1(); 
-// console.log(image);  
+// console.log(image); 
+ 
 // Selecting the image from gallery
 // undefined
 //The issue here is that the step1 function does not explicitly return a value. The setTimeout function inside it is asynchronous, and the function step1 itself doesn't wait for the setTimeout to complete before finishing execution. As a result, the step1 function returns undefined by default.
@@ -26,8 +27,9 @@
 
 
 //----------------------------
-//Right way
-//using callback function
+//Right way  -> using callback function
+
+
 //If you want to capture the result of the asynchronous operation (in this case, the selection of the image after 4 seconds), you can use a callback function or utilize Promises.
 
 // function step1(callback){
@@ -82,7 +84,7 @@
 //     }, 3000);
 // }
 
-// // Nested callback example (callback hell)
+// // // Nested callback example (callback hell)
 // asyncOperation(function (result1) {
 //     console.log(result1);
 
@@ -126,14 +128,14 @@
 //     console.log(image);
 //     return asyncOperation(); //again return kr do
 // })
-// .then(function(image1){ //then yha catch kr lo result
+// .then(function(image1){ //so asyncOperation() returninig a promise to->again .then se yha catch kr lo result
 //     console.log(image1);
 //     return asyncOperation()
 // })
-// // Selecting the image from gallery
-// // Awoesome image selected
-// // Selecting the image from gallery
-// // Awoesome image selected
+// Selecting the image from gallery
+// Awoesome image selected
+// Selecting the image from gallery
+// Awoesome image selected
 
 // .then(function(image2){ //then yha catch kr lo result
 //     console.log(image2); //ydi upr se return  asyncOperation() nhi krege to undefined dega
@@ -191,9 +193,7 @@
 // result of async operation
 
 
-//In this refactored example, the asyncOperation function still returns a Promise. The executeAsyncOperations function is marked as async, and await is used within it to simplify the asynchronous code. The try...catch block is used for error handling.
-
-//---------------------------------------
+//In this  example, the asyncOperation function still returns a Promise. The executeAsyncOperations function is marked as async, and await is used within it to simplify the asynchronous code. The try...catch block is used for error handling.
 
 
 

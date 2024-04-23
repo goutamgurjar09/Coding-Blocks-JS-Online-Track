@@ -39,7 +39,7 @@ btn.forEach(function (button) {
 //bcz eval fun returns ->console.log(eval("2 + 2"));
 //output: 4
 
-
+//------------------------------------
 //2.using array.foreach
 
 // let input = document.getElementById('input');

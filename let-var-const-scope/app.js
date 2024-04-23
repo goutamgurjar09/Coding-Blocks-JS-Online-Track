@@ -42,7 +42,7 @@
 
 //------------------------
 // if(true){
-//     var a = "goutam sir";    //isko as a globel treat kr rha js engine
+//     let a = "goutam sir";    //isko as a globel treat kr rha js engine
 // }
 // console.log("hello " + a);
 
@@ -64,7 +64,7 @@
 //     if(true){
 //         var a = "goutam sir";      
 //     }
-//     console.log("hy " + a); //hy goutam sir
+//     console.log("hy " + a);
 // }
 
 // fun()
@@ -83,7 +83,7 @@
 // fun()
 
 //-------------------------
-//Let and Const have block scope and whenevr you try to access them outside the  block scope  then it will thorow error
+//Let and Const have block scope and whenever you try to access them outside the  block scope  then it will thorow error
 // function fun(){
 //     if(true){ //block scope
 //         let a = "goutam sir";   
@@ -91,7 +91,6 @@
 //     }
 // }
 // console.log("hy " + a + "and " + b);  //a is not defined 
-
 // fun()
 
 
@@ -120,7 +119,6 @@
 //         console.log("hy " + a + " and " + b);  //hy goutam sir and lala sir 
 //     }
 // }
-  
 // fun()
 
 //----------------------
@@ -132,6 +130,7 @@
         
 //         console.log(a+b);   //30
 //     }
+
 // }
   
 // fun()
@@ -243,6 +242,8 @@
 // console.log(win); //india
 
 
+
+//--------------------------
 // let Sone = document.getElementById('dropdown1');
 // let Stwo = document.getElementById('dropdown2');
 

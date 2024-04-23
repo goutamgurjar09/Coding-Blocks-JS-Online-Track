@@ -8,16 +8,25 @@ form.addEventListener('submit', (e) => {
 
 
 const formValidation = () => {
-    const username = document.getElementById("inputUsername").value;
-    const email = document.getElementById("inputEmail").value;
-    const phone = document.getElementById("inputNumber").value;
-    const pass = document.getElementById("inputPassword").value;
-    const Cpass = document.getElementById("inputCPassword").value;
+    const username = document.getElementById("inputUsername").value.trim();
+    const email = document.getElementById("inputEmail").value.trim();
+    const phone = document.getElementById("inputNumber").value.trim();
+    const pass = document.getElementById("inputPassword").value.trim();
+    const Cpass = document.getElementById("inputCPassword").value.trim();
 
+
+
+     // Clear previous error messages
+     document.getElementById("username").innerHTML = "";
+     document.getElementById("emailid").innerHTML = "";
+     document.getElementById("number").innerHTML = "";
+     document.getElementById("Password").innerHTML = "";
+     document.getElementById("CPassword").innerHTML = "";
 //---------
     if (username === "") {
         document.getElementById("username").innerHTML = "** Please enter your name";
-        return false;
+        return false;//The condition will return false to indicate that the email validation has failed.
+
     }
 
     if ((username.length <= 2) || (username.length > 20)) {
@@ -47,12 +56,13 @@ const formValidation = () => {
         document.getElementById("number").innerHTML = "** Please enter your Mobile Number";
         return false;
     }
-    if (phone.length != 10) {
-        document.getElementById("number").innerHTML = "** Mobile Number should be 10 digit";
+    
+    if (isNaN(phone)) { //isNaN ->1234abc/avb
+        document.getElementById("number").innerHTML = "** Mobile Number should contain only number";
         return false;
     }
-    if (isNaN(phone)) { //isNaN ->1234abc 
-        document.getElementById("number").innerHTML = "** Mobile Number should contain only number";
+    if (phone.length != 10) {
+        document.getElementById("number").innerHTML = "** Mobile Number should be 10 digit";
         return false;
     }
 //---------
@@ -78,3 +88,6 @@ const formValidation = () => {
     form.submit();
 };
 
+// The e.preventDefault(); statement is used in JavaScript to prevent the default behavior of an event
+//means whenever we click on submit btn(submit form) it will not reload the page or refresh the page
+//Note:if page refresh then input value bhi hat jayegi

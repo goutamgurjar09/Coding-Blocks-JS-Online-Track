@@ -12,7 +12,7 @@ function getWhetherInfo(){
     .then((res)=>{
         // Check if the response status is OK (200)
         if (!res.ok) {
-            // throw new Error(`Pls type Valid City not found : ${res.statusText}`);
+            // throw new  Error(`Pls type Valid City not found : ${res.statusText}`);
             throw new Error('Pls type Valid City not found');
         }
         //console.log(res);
@@ -20,16 +20,21 @@ function getWhetherInfo(){
     })
     .then((data)=>{
        // console.log(data);
-        div.innerHTML = `
+       div.innerHTML = `
         <h3>City: ${data.name}</h3>
         <h4>Temprature: ${data.main.temp} &deg;C</h4>
         <h5>Humidity: ${data.main.humidity} %</h5>
         <h6>Wind Speed: ${data.wind.speed} m/s</h6> 
     `
+        errorMsgDiv.innerText = " "
+        inputCity.value = " ";
     }) 
     .catch((error) => {
        // console.log('Error fetching weather data:', error);
-        errorMsgDiv.innerText = `${error}`
+       div.innerHTML = " ";
+       errorMsgDiv.innerText = `${error}`
+    //    inputCity.value = " ";
+
     });
     
     

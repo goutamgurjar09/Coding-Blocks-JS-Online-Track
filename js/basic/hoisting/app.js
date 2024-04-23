@@ -14,7 +14,8 @@
 
 
 //-----------------------
-//note: whenever we use let & const keyword in the case of hoisting then it will get an error->  //ReferenceError: Cannot access 'varname' before initialization
+//note: whenever we use let & const keyword in the case of hoisting then it will get an error-> 
+ //ReferenceError: Cannot access 'varname' before initialization
 //ReferenceError: Cannot access 'c' before initialization
 
 // b(); 

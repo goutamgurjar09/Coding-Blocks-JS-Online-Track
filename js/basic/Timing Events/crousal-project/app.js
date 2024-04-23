@@ -8,29 +8,30 @@ let arr = [
     'https://www.pixelstalk.net/wp-content/uploads/2016/07/Wallpapers-pexels-photo.jpg'
 ]
 
-let ArrIndex = 0;
-let stopId = setInterval(function(){
-    imgEl.setAttribute('src',arr[ArrIndex])
-    ArrIndex = (ArrIndex + 1) % arr.length; //modulas->reaminder
-},3000)
+// let ArrIndex = 0;
+// let stopId = setInterval(function(){
+//     imgEl.setAttribute('src',arr[ArrIndex])
+//     ArrIndex = (ArrIndex + 1) % arr.length; //modulas->reaminder
+// },1000)
 
-setTimeout(function(){
-    clearInterval(stopId)
-},30000)
+// setTimeout(function(){
+//     clearInterval(stopId)
+//     document.write('interval stopped')
+// },30000)
 // 30000 miliSeconds = 30 seconds
 
 
 //or
 
-// let i = 0;
-// setInterval(function(){
-//     imgEl.src =  arr[i]
-//     if(i < arr.length-1){ //4 < 4 then set i=0 bcz in array always index/i num start with 0 and length start with 1
-//         i++;
-//     }
-//     else{
-//         i = 0;
-//     }
-// },2000)
+let i = 0;
+setInterval(function(){
+    imgEl.src =  arr[i]
+    if(i < arr.length-1){  //when i=4<4  then else i=0 set kr do  bcz in array always index/i num start with 0 and length start with 1
+        i++;
+    }
+    else{
+        i = 0;
+    }
+},2000)
 
 

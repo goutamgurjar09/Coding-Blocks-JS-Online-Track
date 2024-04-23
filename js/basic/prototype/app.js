@@ -1,4 +1,7 @@
 
+//Note:in JS every function and object has its own property called prototype
+// a prototype itself is  also another object. so the prototype has its own prototype and this creates a prototype chain
+// means prototypes ke ander bhi prototypes hai its like chaining of prototypes
 
 
 // let todo = {
@@ -27,8 +30,6 @@
 // true
 
 
-//Note:in JS every function and object has its own property called prototype
-// a prototype itself is  also another object. so the prototype has its own prototype and this creates a prototype chain means prototypes ke ander bhi prototypes hai
 // -----------------------------------------
 
 // let arr = ["my" , "name" , "is" , "samarth"];

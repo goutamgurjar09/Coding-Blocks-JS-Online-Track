@@ -20,37 +20,30 @@
         
        // Get the select element
         let selectDiv = document.querySelector('#getVal')
-
         let selectElement = document.querySelector('#select')
-
-        // Show the default selected value on the console
-       // console.log('Selected Value:', selectElement.value);
-
-        // // Add an event listener to handle changes
+        
         selectElement.addEventListener('change',()=>{
-              // Get the selected option
-            const selectedOption = selectElement.selectedOptions[0];
+           let selectedValue = selectElement.value;
+           let selectedContent = selectElement.selectedOptions[0].textContent;
+           //console.log(selectedValue , selectedContent);
+           selectDiv.innerHTML = `${selectedValue}  ${selectedContent}`
+        })
+ 
+//---------------------------
 
-            // let selectedValue = selectElement.value
-            // let selectedContent = selectElement.textContent
-            let selectedValue = selectedOption.value
-            let selectedContent = selectedOption.textContent //its a DOM property which give  select element content-> selectedContent
+// selectElement.addEventListener('change', () => {
+//     let selectedOptions = selectElement.selectedOptions;
 
-            // Show the selected value on the console
-            console.log('Selected Value:', selectedValue);
-            console.log('Selected Value:', selectedContent); //this give selected content
+//     Array.from(selectedOptions).forEach(option => {
+//         let selectedContent = option.textContent;
+//         console.log(selectedContent);
+//     });
+// });
 
-            // let li  = document.createElement('li')
-            li.textContent = `${selectedValue}  ${selectedContent}`;
-            selectDiv.appendChild(li)
-            
-            //selectDiv.textContent = selectedValue;
-        }) 
+//Note:The selectedOptions collection is a NodeList, not an array, and it doesn't have a forEach method directly.
+//You can convert it to an array using Array.from before using forEach.
 
-
-
-
-       
+//selectedOptions[0] will give the first selected option  but whenever you change the value in the select element it will give the new selected option
     </script>
 </body>
 </html>

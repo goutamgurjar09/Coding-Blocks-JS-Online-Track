@@ -5,8 +5,8 @@ function generatePassword(){
     const charset = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789!@#$%^&*()_+"; // Define the characters to include in the password
     let password = "";
     for(let i=0; i<length; i++){ 
-      const randomIndex = Math.floor(Math.random() * charset.length);
-      password += charset[randomIndex];
+      const randomIndexValue = Math.floor(Math.random() * charset.length); //73
+      password += charset[randomIndexValue]; //get randomIndexValue from charset and add it to password
     }
     // Display the generated password in the input field
     input.value = password;

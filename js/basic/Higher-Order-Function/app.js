@@ -1,14 +1,35 @@
 
-//HOF ->A function which takes another function as an argument or returns a function  is called a higher-order function.
+//HOF ->A function which takes another function as an argument or returns a function then another function  is called a higher-order function.
 
 
-//CB ->A function that is passed inside another function as an argument or returns a function as its result is called a higher-order function.
+//CB ->A function that is passed inside another function as an argument or returns a function as its result is called a Callback function.
 
 
+
+//usecase:-
+//*Asynchronous Operations  : like setTimeout, setInterval, and fetch
+//*Event Handling   :Event listeners in JavaScript, such as addEventListener, accept callback functions to be executed when events occur.
+
+//ex
+// function higherOrderFunction(callback) {
+//     // Execute the callback function
+//    return callback();
+//   }
+  
+//   // Define a callback function
+//   function callbackFunction() {
+//     console.log("Callback function executed");
+//   }
+  
+//   // Pass the callback function to the higher-order function
+//   higherOrderFunction(callbackFunction);
+  
+
+//--------------------------------
 //1. why we use HOF and CB
-//ex-> Suppose we have to create a calculater operation to hme alg -alg fun bana pdega like add,subtract,division and so on but it will be lenthy process
+//ex-> Suppose we have to create a calculater operation to hme alg-alg fun bana pdega like add,subtract,division and so on but it will be lenthy process
 
-//ex;
+//ex-
 function add(n1,n2){ 
     return n1+n2;
    
@@ -27,7 +48,7 @@ function multi(n1 ,n2){
 
 
 //--------------------------------------------
-//we will create a master fun HOF  and perform same action  isse apko alg -alg(like add,sub...) function ko call nhi krna pdega  simple aapko HOF ko call krna pdeaga
+//instead of that we will create a master fun HOF  and perform same action  isse apko alg -alg(like add,sub...) function ko call nhi krna pdega  simple aapko HOF ko call krna pdeaga
 
 function operation(n1,n2,cb){   //hof
     return cb(n1,n2);
@@ -38,7 +59,7 @@ console.log(operation(10,20,multi));
 
 
 
-
+//------------------------
 
 
 //ex-> suppose aapki ek company hai or apko candidate/employees higher krna hai to uske liye apko interview lena hai then we will use hof to understanding purpose
@@ -118,7 +139,6 @@ candi1("js");
 // }); 
 
 //------------------------
-//when you pass the entire function as an argument in some other function it is called higher order function
 
 // callback function -> 'b'
 // the function which is being sent as an argument to some other function and there in called as well then it is a CALLBACK function.

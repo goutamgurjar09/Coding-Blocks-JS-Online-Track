@@ -52,14 +52,14 @@ for(let song of songs){
 //2. play btn ka icon badlo and click krke gaana chalao
 
 play_btn.addEventListener('click',function(){
-    audio.paused ? audio.play() : audio.pause()
+    audio.paused ? audio.play() : audio.pause();
     
-    if(play_btn.children[0].classList.contains('fa-play')){
+    if(play_btn.children[0].classList.contains('fa-play')){      //audio play hai to pause kr do
         play_btn.children[0].classList.remove('fa-play')
         play_btn.children[0].classList.add('fa-pause')
     }
     else{
-        play_btn.children[0].classList.remove('fa-pause')
+        play_btn.children[0].classList.remove('fa-pause')        //audio  pause hai to play kr do
         play_btn.children[0].classList.add('fa-play')
 
     }
@@ -81,9 +81,9 @@ play_btn.addEventListener('click',function(){
 
 //3.  current time ke hisaab se range chale
 
-audio.addEventListener('canplay',function(){//istead of timeupdate
+audio.addEventListener('timeupdate',function(){
     let currentProgress = (audio.currentTime  / audio.duration) * 100 
-    progress.value = currentProgress
+    progress.value = currentProgress;
 
 
     //update  and show the time and duration
@@ -102,8 +102,8 @@ audio.addEventListener('canplay',function(){//istead of timeupdate
 function formatTime(timeInSeconds){
     const minutes = Math.floor(timeInSeconds / 60)
     const seconds = Math.floor(timeInSeconds % 60)
-    const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`
-    return formattedTime
+    const formattedTime = `${minutes}:${seconds < 10 ? '0' : ''}${seconds}`//like 1:00 ->if currenttime = 60s 
+    return formattedTime;
 }
 
 
@@ -133,7 +133,7 @@ forwardBtn.addEventListener('click', function () {
     if (currentSongId < 9) {
         currentSongId += 1;
     } else {
-        currentSongId = 1; // Loop back to the first song
+        currentSongId = 1; // Loop back to the first song if currentSongId > 9
     }
     audio.src = `./assets/song${currentSongId}.mp3`;
     audio.currentTime = 0;
@@ -154,3 +154,11 @@ backwardBtn.addEventListener('click', function () {
     play_btn.children[0].classList.add('fa-pause');
     play_btn.children[0].classList.remove('fa-play');
 });
+
+
+//how to calculate currentprogress
+
+// let currentProgress = (audio.currentTime  / audio.duration) * 100 
+//Note: (60/currentTime)*100   = 1/3*100 =>33.33%
+
+//here 60 seconds-> currentTime  and 180 seconds ->total duration

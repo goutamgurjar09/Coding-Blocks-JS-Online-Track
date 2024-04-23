@@ -13,7 +13,7 @@
 //     }
 //     inner();
 // }
-// //inner();//X-> you can't call inner fun outside inner function scope
+// //inner();//wrong-> you can't call inner fun outside inner function scope
 // outer()
 
 
@@ -97,10 +97,10 @@
 //     inner();
 //     function inner(){
 //         var b = 1000;
-//         console.log(b);
+//         console.log(b); //1000
 //     }
 
-//     console.log(b);
+//     console.log(b); //10
 // }
 
 // outer();
@@ -115,10 +115,10 @@
 //     inner();
 //     function inner(){
 //         var b = 1000;
-//         console.log(b);
+//         console.log(b); 
 //     }
 
-//     console.log(b);
+//     console.log(b); 
 // }
 // console.log(b);// b is not defined
 // outer();
@@ -172,12 +172,12 @@
 //     var b = 10;
 //     inner();
 //     function inner(){
-//         //var b = 1000;
-//         console.log(b);
+//      
+//         console.log(b);//10
 //     }
     
 // }
-// console.log(a);
+// console.log(a);//100
 // outer();
 
 
@@ -189,7 +189,7 @@
 //     let b = 10;
 //     inner();
 //     function inner(){
-//         //var b = 1000;
+//        
 //         console.log(b);
 //     }
     
@@ -209,7 +209,7 @@
 //     const b = 10;
 //     inner();
 //     function inner(){
-//         //var b = 1000;
+//       
 //         console.log(b);
 //     }
     
@@ -239,7 +239,7 @@
 // 100
 // 1000
 
-
+//----------------------
 // var a = 100;
 
 // function outer(){

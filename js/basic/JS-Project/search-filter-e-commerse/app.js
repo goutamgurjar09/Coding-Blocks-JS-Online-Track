@@ -104,6 +104,7 @@ function showProductArry(productArrayToShow) {
 showProductArry(productarray);
 
 //---------------------------
+//step-1
 function searchproduct(inputTextName) {
     filterarray = productarray.filter((Carditem) => {
         if (Carditem.name.toLowerCase().includes(inputTextName.toLowerCase())) {

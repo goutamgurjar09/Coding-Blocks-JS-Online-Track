@@ -18,14 +18,13 @@
       height: 300px;
       background-color: #f60905;  /* filled pot*/
       position: relative;
-
     }
 
     #waterLevel {
       background-color: #07df0e; /* empty pot*/
       width: 100%;
       transition: height 0.5s ease-in-out;
-    }
+    } 
 
     #waterPercentageText {
       color: #fff;
@@ -49,44 +48,6 @@
 <input type="number" id="waterPercentageInput" placeholder="Enter water percentage">
 
 <script src="app.js"></script>
-<!-- <script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const waterPot = document.getElementById('waterPot');
-    const waterLevel = document.getElementById('waterLevel');
-    const waterPercentageText = document.getElementById('waterPercentageText');
-    const input = document.getElementById('waterPercentageInput');
-
-    // Set initial water level percentage
-    const initialPercentage = 50;
-    updateWaterLevel(initialPercentage);
-
-    input.addEventListener('input', function () {
-      updateWaterLevel(this.value);
-    });
-
-    function updateWaterLevel(percentage) {
-      // Validate input to be within the range of 0 to 100
-      percentage = Math.max(0, Math.min(100, percentage));
-
-      // Calculate the height of the water level based on the percentage
-      const height = (100 - percentage) + '%';
-
-      // Update the water level
-      waterLevel.style.height = height;
-
-      // Calculate the empty percentage
-      const emptyPercentage = 100 - percentage;
-
-      // Update the water percentage text
-    //   waterPercentageText.textContent = `Filled: ${emptyPercentage}%  Empty: ${percentage  }%`;
-      waterLevel.textContent = `Filled: ${percentage }%  |     Empty: ${  emptyPercentage}%`;
-
-    }
-  });
-</script> -->
-
-
-
 
 </body>
 </html>

@@ -1,19 +1,54 @@
 // Async/await
-// there is a special syntax to work with promises in more comforetable fashion,
-// called  async/await. it is surprisingly easy to understand and use.  
+
+//Async/Await is a features in js that simplifies working with asynchronous code. 
+//making it cleaner and more readable  like synchronous code ,it is surprisingly easy to understand and use.  
+
+//Async keyword is used to declare a function as a asynchronous
+//Await keyword is used to paused the executon of an async function untill the promise is resolved 
+//and await is only used inside an async function.
 
 //the word "async" before a function means one simple thing: a function always returns a promise
 
-//so the async keyword is added to functions to tll them to return a promise rather than directly returning the value
-
-//we can use await when calling any function that returns a Promise , including web API functions.
-
-//the keyword await makes javascript wait until that Promise settles  and returns its result
-
-//So basically async/await ka use hm jo bhi hmara promise data return krta hai usko fatch/consume krne ke liye krte hai instead of  (.then)
-
+//async and await are features in JavaScript that allow you to work with promises more comfortably and asynchronously 
+//instead of .then() .catch() we use simple try and catch to handle the responce and error of the promises
+//They are widely used in modern JavaScript, especially in scenarios like fetching data from APIs or dealing with other asynchronous operations.
 
 // ---------------------
+
+//Simple ex. of async/await to fetch data from api
+
+async function fetchData(){
+ try{
+  const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+  const data = await response.json();
+  console.log(data);
+ }
+ catch(error){
+  console.log(error);
+ }
+}
+fetchData();
+
+
+//--------------------------
+// //using .then()
+// async function fetchData(){
+ 
+//    const response = await fetch('https://jsonplaceholder.typicode.com/todos/1');
+//    const data = await response.json();
+//    return data;
+  
+ 
+//  }
+//  fetchData()
+//  .then(data => console.log(data))
+//  .catch(error => console.log(error)); 
+ 
+ 
+ 
+ 
+//-------------------------------
+
 //ex-1.
 //promise-1
 // const myPromise1 = new Promise( (resolve,reject) =>{
@@ -176,4 +211,7 @@ async function getData(){
   
 
 }
-getData()
+getData();
+
+
+//------------------------------

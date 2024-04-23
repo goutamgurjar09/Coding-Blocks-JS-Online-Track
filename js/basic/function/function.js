@@ -72,7 +72,9 @@
 // }
 
 // sum(50,10); //NaN
-//The output of the provided JavaScript code will be NaN (Not-a-Number) because you are trying to add two numbers and a third parameter n3, but you only pass two arguments (10 and 30) when calling the sum function. In JavaScript, when you try to add a number and undefined (which is what n3 will be in this case because it's not provided as an argument), the result is NaN.
+//The output of the provided JavaScript code will be NaN (Not-a-Number) because you are trying to add two numbers and a third parameter n3, 
+//but you only pass two arguments (10 and 30) when calling the sum function.
+// In JavaScript, when you try to add a number and undefined (which is what n3 will be in this case because it's not provided as an argument), the result is NaN.
 
 // ----------------------------------
 // ---- default parameterised functions -------
@@ -88,10 +90,11 @@
 
 // ----------------------------------
 
-// function sum(n1, n2, n3=70){ //override default parameter (this value) and use provided value(arguments) by function call
+// function sum(n1, n2, n3=70){ //override default parameter (n3=70) and use provided value(arguments) by function call
 //     let num1 = n1;
 //     let num2 = n2;
 //     console.log(num1 + num2 + n3); 
+
 // }
 
 // sum(50,10,20); //80

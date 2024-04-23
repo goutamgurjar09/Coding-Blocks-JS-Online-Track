@@ -39,7 +39,7 @@ let step4 = function(image){
 step1()
 .then( function(image){
     console.log("image Selected")
-    return step2(image);
+    return step2(image);           //here step2 is called inside step1 with image as argument
 })
 .then( function(filter){
     console.log('filter applied')

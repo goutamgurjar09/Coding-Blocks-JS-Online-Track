@@ -6,9 +6,11 @@ let divEle = document.querySelectorAll('.one')
 
 
 select.addEventListener('change',()=>{
-   const selectOption = select.selectedOptions[0]   //select the option
+   const selectOption = select.selectedOptions[0]   //select the option 
+   //console.log(selectOption)           //it will give the whole selected option
    let selectValue = selectOption.value
-   let selectContent = selectOption.textContent 
+   //console.log(selectValue)            //it will give the selected option attribute value
+   let selectContent = selectOption.textContent  //it will give the selected option text content
  
 
 //   console.log(selectValue)     //get the option value
@@ -36,9 +38,9 @@ for(let i = 0; i<divEle.length; i++){
 //show/hide div based on selected value using foreach loop
   
 // divEle.forEach( (div,index)=>{   //div represent each div
-//         //console.log(div)
-//          console.log(index) 
-//         if(index == selectValue - 1){
+//         //console.log(div)      
+//         // console.log(index)   to see the index of each div 0,1,2,3
+//         if(index == selectValue - 1){   
 //             div.style.display = 'block';
 //             div.textContent = selectContent;
 //             //div.textContent += selectContent;
@@ -50,7 +52,7 @@ for(let i = 0; i<divEle.length; i++){
      
  })
 
-
+//Note: selectValue start with 1,2,3,4....
 
 //--------------------------
 // oneEle.forEach((element)=>{

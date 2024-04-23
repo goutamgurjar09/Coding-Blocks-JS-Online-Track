@@ -78,9 +78,6 @@ function stopwatch() {
 
 
 
-// var startbtn = document.querySelector('#start')
-// var stopbtn = document.querySelector('#stop')
-// var resetbtn = document.querySelector('#reset')
 
 
 
@@ -162,7 +159,7 @@ function stopwatch() {
     //    document.getElementById('sec').innerHTML = sec
     //    document.getElementById('countMili').innerHTML = count
        
-//     setTimeout(stopwatch,10) //10 milisec baad same fun baar-baar call hoga jb tk con. true hai  because path-> 100 * 10 => 1000mili    =>1sec.
+//     setTimeout(stopwatch,10) //10 milisec baad same fun baar-baar call hoga jb tk count milisec. true hai  because path-> 100 * 10 => 1000mili    =>1sec.
    
 //    }
 // }
