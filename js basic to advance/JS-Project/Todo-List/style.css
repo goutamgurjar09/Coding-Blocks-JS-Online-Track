@@ -1,0 +1,22 @@
+body{
+background-color: rgb(4, 2, 37);
+
+}
+.bg{
+    background-color:#809fff;
+    border-radius: 1%;
+}
+
+.label{
+    margin-left: 40px;
+    margin-top: 10px;
+}
+.one{
+    margin: -25px;
+}
+.task-box .task .checked{
+    text-decoration: line-through;
+}
+.filters button.active{
+   color: #ed0606;
+}
